@@ -52,53 +52,59 @@ fun main () {
     println("Cantidad total de piezas procesadas: $suma")
 */
     //Problemas propuestos
-/*
+
+    /*
     var valorAcumulado = 0
-    var entrada: Int
 
     println("Ingrese los valores a sumar. Ingrese 9999 para finalizar.")
 
     do {
         print("Ingrese un valor: ")
-        entrada = readln().toInt()
+        val entrada = readln().toInt()
 
         if (entrada != 9999) {
             valorAcumulado += entrada
         }
+
     } while (entrada != 9999)
 
+      if(valorAcumulado == 0) {
+            println("El valor acumulado es cero.")
+        }else
+        if(valorAcumulado > 0){
+                println("El valor acumulado es mayor a cero.")
+        }else
+        if(valorAcumulado < 0) {
+            println("El valor acumulado es menor a cero.")
+        }
+
     println("El valor acumulado es: $valorAcumulado")
+*/
 
-    if(valorAcumulado == 0) {
-        println("El valor acumulado es cero.")
-     (valorAcumulado > 0)
-        println("El valor acumulado es mayor a cero.")
-    }else{
-        println("El valor acumulado es menor a cero.")
-    }*/
 
-    var saldos = 0
-    var cuenta: Int
-    var saldo: Double
+
+    var saldos = 0.0
+
 
     println("Ingrese los datos de las cuentas corrientes. Ingrese un número de cuenta negativo para finalizar.")
 
     do {
         print("Ingrese el número de cuenta: ")
-        cuenta = readLine()!!.toInt()
-
-        if (cuenta >= 0) {
+        val cuenta = readln().toInt()
+        if (cuenta >= 0 ) {
             print("Ingrese el saldo actual: ")
-            saldo = readLine()!!.toDouble()
+            val saldo = readln().toDouble()
 
-            (saldo > 0)
-            println("Estado de la cuenta: Acreedor")
-            saldos += saldo.toInt()
-
-            (saldo < 0)
-            println("Estado de la cuenta: Deudor")
-        }else{
-            println("Estado de la cuenta: Nulo")
+            if (saldo > 0) {
+                println("Estado de la cuenta: Acreedor")
+                saldos+=saldo
+            }else
+            if (saldo < 0) {
+                println("Estado de la cuenta: Deudor")
+            }else
+            if (saldo == 0.0) {
+                println("Estado de la cuenta: Nulo")
+            }
 
         }
     } while (cuenta >= 0)
